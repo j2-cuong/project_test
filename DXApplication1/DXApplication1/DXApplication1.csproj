@@ -77,17 +77,17 @@
     <Compile Include="DetailPage\tabDien.Designer.cs">
       <DependentUpon>tabDien.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailPage\tabDongCoTuDien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailPage\tabDongCoTuDien.Designer.cs">
+      <DependentUpon>tabDongCoTuDien.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetailPage\tabInfomation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DetailPage\tabInfomation.Designer.cs">
       <DependentUpon>tabInfomation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetailPage\tabKichThuoc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DetailPage\tabKichThuoc.Designer.cs">
-      <DependentUpon>tabKichThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="DetailPage\tabThongSo.cs">
       <SubType>UserControl</SubType>
@@ -109,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaseData\BaseTabControl.resx">
+      <DependentUpon>BaseTabControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailPage\tabCabin.resx">
       <DependentUpon>tabCabin.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,11 +121,11 @@
     <EmbeddedResource Include="DetailPage\tabDien.resx">
       <DependentUpon>tabDien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetailPage\tabDongCoTuDien.resx">
+      <DependentUpon>tabDongCoTuDien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailPage\tabInfomation.resx">
       <DependentUpon>tabInfomation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetailPage\tabKichThuoc.resx">
-      <DependentUpon>tabKichThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetailPage\tabThongSo.resx">
       <DependentUpon>tabThongSo.cs</DependentUpon>

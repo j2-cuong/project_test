@@ -31,7 +31,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.menuInfomation = new DevExpress.XtraTab.XtraTabPage();
             this.menuThongSo = new DevExpress.XtraTab.XtraTabPage();
-            this.menuKichThuoc = new DevExpress.XtraTab.XtraTabPage();
+            this.menuDongCoTuDien = new DevExpress.XtraTab.XtraTabPage();
             this.menuCabin = new DevExpress.XtraTab.XtraTabPage();
             this.menuCua = new DevExpress.XtraTab.XtraTabPage();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -56,7 +56,7 @@
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.menuInfomation,
             this.menuThongSo,
-            this.menuKichThuoc,
+            this.menuDongCoTuDien,
             this.menuCabin,
             this.menuCua,
             this.menuDien,
@@ -74,11 +74,11 @@
             this.menuThongSo.Size = new System.Drawing.Size(921, 589);
             this.menuThongSo.Text = "Thông số cơ bản";
             // 
-            // menuKichThuoc
+            // menuDongCoTuDien
             // 
-            this.menuKichThuoc.Name = "menuKichThuoc";
-            this.menuKichThuoc.Size = new System.Drawing.Size(921, 589);
-            this.menuKichThuoc.Text = "Kích thước & Kết cấu";
+            this.menuDongCoTuDien.Name = "menuDongCoTuDien";
+            this.menuDongCoTuDien.Size = new System.Drawing.Size(921, 589);
+            this.menuDongCoTuDien.Text = "ĐỘNG CƠ TỦ ĐIỆN";
             // 
             // menuCabin
             // 
@@ -164,7 +164,7 @@
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage menuInfomation;
         private DevExpress.XtraTab.XtraTabPage menuThongSo;
-        private DevExpress.XtraTab.XtraTabPage menuKichThuoc;
+        private DevExpress.XtraTab.XtraTabPage menuDongCoTuDien;
         private DevExpress.XtraTab.XtraTabPage menuCabin;
         private DevExpress.XtraTab.XtraTabPage menuCua;
         private DevExpress.XtraEditors.TextEdit textEdit1;

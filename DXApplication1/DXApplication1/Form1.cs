@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using ProcessDataAllForm;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DXApplication1
@@ -24,7 +25,7 @@ namespace DXApplication1
             {
                 { menuInfomation, tabInfomation.Instance },
                 { menuThongSo,   tabThongSo.Instance },
-                { menuKichThuoc, tabKichThuoc.Instance },
+                { menuDongCoTuDien, tabDongCoTuDien.Instance },
                 { menuCabin,     tabCabin.Instance },
                 { menuCua,       tabCua.Instance },
                 { menuDien, tabDien.Instance },
@@ -67,17 +68,20 @@ namespace DXApplication1
 
         public string GetAllTabsData()
         {
-            var allData = new Dictionary<string, string>();
-            
-            foreach (var kvp in _tabContents)
-            {
-                if (kvp.Value is ProcessDataWithTabControl tab)
-                {
-                    allData[kvp.Key.Name] = tab.GetTabData();
-                }
-            }
+            var allData = _tabContents
+                .Where(kvp => kvp.Value is ProcessDataWithTabControl)
+                .ToDictionary(
+                    kvp => kvp.Key.Name,
+                    kvp => JsonConvert.DeserializeObject<Dictionary<string, object>>(
+                        ((ProcessDataWithTabControl)kvp.Value).GetTabData()
+                    )
+                );
 
-            return JsonConvert.SerializeObject(allData);
+            return JsonConvert.SerializeObject(allData, new JsonSerializerSettings
+            {
+                Formatting = Formatting.None,
+                NullValueHandling = NullValueHandling.Ignore
+            });
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

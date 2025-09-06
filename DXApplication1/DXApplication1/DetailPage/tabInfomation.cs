@@ -1,4 +1,5 @@
 ﻿using ProcessDataAllForm;
+using System;
 
 namespace DXApplication1.DetailPage
 {
@@ -21,14 +22,25 @@ namespace DXApplication1.DetailPage
             InitializeComponent();
         }
 
-        protected override void CollectControlData()
+        protected override void CollectControlData() 
         {
-            // Thu thập data
+            TabData["Id"] = Guid.NewGuid();
+            TabData["MaSo"] = txtMaSo.Text;
+            TabData["NgayBH"] = dtpNgayBH.Text;
+            TabData["SoHD"] = txtSoHD.Text;
+            TabData["TenCTrinh"] = txtTenCTrinh.Text;
+            TabData["NgayXH"] = dtpNgayXH.Text;
+            TabData["LuuY"] = txtLuuY.Text;
+            TabData["DiaChi"] = txtDiaChi.Text;
+            TabData["NgayBH"] = dtpNgayBH.Text;
         }
 
         protected override void RestoreControlData()
         {
-            // Khôi phục data
+            if (TabData.ContainsKey("MaSo"))
+                txtMaSo.Text = TabData["MaSo"].ToString();
+            if (TabData.ContainsKey("SoHD"))
+                txtSoHD.Text = TabData["SoHD"].ToString();
         }
     }
 }
