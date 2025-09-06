@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
+
 namespace ResponseServices
 {
     public class Response
     {
         public int Status { get; set; }
         public string Message { get; set; }
-        public Response(int status, string? message = null)
+        public Response(int status, string message = null)
         {
             Status = status;
             Message = message ?? string.Empty;
@@ -18,12 +19,12 @@ namespace ResponseServices
     /// <typeparam name="T"></typeparam>
     public class Response<T> : Response
     {
-        public T?[] Data { get; set; }
+        public T[] Data { get; set; }
         public int TotalRecord => Data != null ? Data.Length : 0;
 
         [JsonConstructor]
         public Response(
-            int status, string? message = null, T?[] data = default)
+            int status, string message = null, T[] data = default)
             : base(status, message)
         {
             Data = data;

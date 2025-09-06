@@ -19,7 +19,7 @@ namespace DapperServices
         /// <param name="sqlQuery"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public static async Task<Response<T>> Query<T>(string sqlQuery, object? param = null)
+        public static async Task<Response<T>> Query<T>(string sqlQuery, object param = null)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace DapperServices
         /// <param name="sqlQuery"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        public static async Task<Response> Execute(string sqlQuery, object? param = null)
+        public static async Task<Response> Execute(string sqlQuery, object param = null)
         {
             try
             {
