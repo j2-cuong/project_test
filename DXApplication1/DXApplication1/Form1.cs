@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using DXApplication1.DetailPage;
+using DXApplication1.Logic;
 using Newtonsoft.Json;
 using ProcessDataAllForm;
 using System;
@@ -108,6 +109,7 @@ namespace DXApplication1
             try
             {
                 var data = GetAllTabsData();
+                DevExpressLogic.ExportReportWithDialog(true,data);
                 MessageBox.Show("Export successfully");
             }
             catch (Exception ex)
@@ -121,6 +123,7 @@ namespace DXApplication1
             try
             {
                 var data = GetAllTabsData();
+                DevExpressLogic.ExportReportWithDialog(false, data);
                 MessageBox.Show("Export successfully");
             }
             catch (Exception ex)

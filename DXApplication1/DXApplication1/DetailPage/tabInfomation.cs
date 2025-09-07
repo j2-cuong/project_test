@@ -33,6 +33,7 @@ namespace DXApplication1.DetailPage
             TabData["LuuY"] = txtLuuY.Text;
             TabData["DiaChi"] = txtDiaChi.Text;
             TabData["NgayBH"] = dtpNgayBH.Text;
+            TabData["Trang"] = txtTrang.Text;
         }
 
         protected override void RestoreControlData()

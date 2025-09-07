@@ -131,6 +131,7 @@
     <Compile Include="DetailPage\tabTrangBi.Designer.cs">
       <DependentUpon>tabTrangBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevExpressServices\Logic\DevExpressLogic.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,7 +186,9 @@
     <EmbeddedResource Include="XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="333.repx" />
+    <None Include="DevExpressServices\ReportFile\Report.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

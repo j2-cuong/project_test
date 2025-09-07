@@ -1,8 +1,10 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DXApplication1.Logic;
 using ProcessDataAllForm;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -27,13 +29,7 @@ namespace DXApplication1.DetailPage
             InitializeComponent();
         }
 
-        protected override void CollectControlData()
-        {
-        }
 
-        protected override void RestoreControlData()
-        {
-        }
 
         private void picDC_Click(object sender, EventArgs e)
         {
@@ -70,6 +66,35 @@ namespace DXApplication1.DetailPage
                     picTD.Tag = ofd.FileName;
                 }
             }
+        }
+
+        
+
+        protected override void CollectControlData()
+        {
+
+            TabData["DC_Ten"] = txtDC_Ten.Text;
+            TabData["Model"] = txtDC_Model.Text;
+            TabData["CSuat"] = txtDC_CSuat.Text;
+            TabData["Loai"] = txtDC_Loai.Text;
+            TabData["SoSoiCap_1"] = txtDC_SoSoiCap_1.Text;
+            TabData["SoSoiCap_2"] = txtDC_SoSoiCap_2.Text;
+            if (picDC.Image != null)
+                TabData["picDC"] = DevExpressLogic.SaveImageToBuildFolder(picDC.Image, "DC");
+
+            TabData["TD_Ten"] = txtTD_Ten.Text;
+            TabData["TD_Model"] = txtTD_Model.Text;
+            TabData["TD_CSuat"] = txtTD_CSuat.Text;
+            if (picTD.Image != null)
+                TabData["picTD"] = DevExpressLogic.SaveImageToBuildFolder(picTD.Image, "TD");
+
+            TabData["NguonDienTM"] = txtNguonDienTM.Text;
+            TabData["NguonDienCS"] = txtNguonDienCS.Text;
+        }
+
+        protected override void RestoreControlData()
+        {
+
         }
 
     }
